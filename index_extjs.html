@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Case Gestão de Processos</title>
+
+		<!-- CSS do Ext JS 4 -->
+		<link rel="stylesheet" type="text/css" href="extjs/resources/css/ext-all.css" />
+		
+		<!-- Configuracao do Ext JS 4 -->
+		<script type="text/javascript" src="extjs/ext-all-debug-w-comments.js"></script>
+	</head>
+	
+	<body></body>
+	
+	<script type="text/javascript">
+		Ext.onReady(function(){
+	    	Ext.QuickTips.init();
+			Ext.create('Ext.form.Panel', {
+				renderTo	: Ext.getBody(),
+		        title		: 'Inner Tabs',
+		        bodyStyle	:'padding:5px',
+		        width		: 600,
+		        fieldDefaults: {
+		            labelAlign	: 'top',
+		            msgTarget	: 'side'
+		        },
+		        defaults: {
+		            anchor	: '100%'
+		        },
+		
+		        items: [{
+		            layout	:'column',
+		            border	:false,
+		            items:[{
+		                columnWidth	:.5,
+		                border		:false,
+		                layout		: 'anchor',
+		                defaultType	: 'textfield',
+		                items: [{
+		                    fieldLabel	: 'First Name',
+		                    anchor		:'95%'
+		                }, {
+		                    fieldLabel	: 'Company',
+		                    anchor		:'95%'
+		                }]
+		            },{
+		                columnWidth	:.5,
+		                border		:false,
+		                layout		: 'anchor',
+		                defaultType	: 'textfield',
+		                items: [{
+		                    fieldLabel	: 'Last Name',
+		                    anchor		:'95%'
+		                },{
+		                    fieldLabel	: 'Email',
+		                    vtype		:'email',
+		                    anchor		:'95%'
+		                }]
+		            }]
+		        }, {
+		            xtype		:'tabpanel',
+		            plain		:true,
+		            height		:235,
+		            items:[{
+		                cls			: 'x-plain',
+		                title		: 'Biography',
+		                layout		: 'fit',
+		                bodyStyle	:'padding:10px',
+		                items	: {
+		                    xtype		: 'htmleditor',
+		                    fieldLabel	: 'Biography',
+		                    margin		: '0 0 10 0'
+		                }
+		            }]
+		        }]
+		    });
+		});
+	</script>
+	
+</html>
